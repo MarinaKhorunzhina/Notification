@@ -9,6 +9,8 @@ import UIKit
 
 class Notification: UITableViewController {
     
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     let notifications = ["Local Notification",
                          "Local Notification with Action",
                          "Local Notification with Content",
@@ -44,7 +46,9 @@ class Notification: UITableViewController {
                                       message: "After 5 seconds " + notificationType + " will appear",
                                       preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.appDelegate?.scheduleNotification(notifaicationType: notificationType)
+        }
         
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)

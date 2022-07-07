@@ -38,6 +38,21 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         content.badge = 1
         content.categoryIdentifier = userAction
         
+        guard let path = Bundle.main.path(forResource: "icon", ofType: "png") else { return }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let attachment = try UNNotificationAttachment(
+                identifier: "icon",
+                url: url,
+                options: nil)
+            
+            content.attachments = [attachment]
+        } catch {
+            print("The attachment cold not be loaded")
+        }
+        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         let identifire = "Local Notification"
@@ -67,7 +82,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        completionHandler([.alert, .sound])
+        completionHandler([.banner, .sound])
     }
     
     func userNotificationCenter(

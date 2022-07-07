@@ -12,7 +12,7 @@
 		9CBC62A228749BA200395937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CBC62A028749BA200395937 /* Main.storyboard */; };
 		9CBC62A428749BA200395937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CBC62A328749BA200395937 /* Assets.xcassets */; };
 		9CBC62A728749BA200395937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CBC62A528749BA200395937 /* LaunchScreen.storyboard */; };
-		9CBC62AF28749C7000395937 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC62AE28749C7000395937 /* Notification.swift */; };
+		9CBC62AF28749C7000395937 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC62AE28749C7000395937 /* TableViewController.swift */; };
 		9CBC62B12877574F00395937 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC62B02877574F00395937 /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 		9CBC62A328749BA200395937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CBC62A628749BA200395937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CBC62A828749BA200395937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CBC62AE28749C7000395937 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		9CBC62AE28749C7000395937 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9CBC62B02877574F00395937 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,12 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				9CBC629A28749BA200395937 /* AppDelegate.swift */,
-				9CBC62B02877574F00395937 /* Notifications.swift */,
 				9CBC629C28749BA200395937 /* SceneDelegate.swift */,
-				9CBC62AE28749C7000395937 /* Notification.swift */,
+				9CBC62B02877574F00395937 /* Notifications.swift */,
+				9CBC62AE28749C7000395937 /* TableViewController.swift */,
 				9CBC62A028749BA200395937 /* Main.storyboard */,
-				9CBC62A328749BA200395937 /* Assets.xcassets */,
 				9CBC62A528749BA200395937 /* LaunchScreen.storyboard */,
+				9CBC62A328749BA200395937 /* Assets.xcassets */,
 				9CBC62A828749BA200395937 /* Info.plist */,
 			);
 			path = Notification;
@@ -143,7 +143,7 @@
 			files = (
 				9CBC62B12877574F00395937 /* Notifications.swift in Sources */,
 				9CBC629B28749BA200395937 /* AppDelegate.swift in Sources */,
-				9CBC62AF28749C7000395937 /* Notification.swift in Sources */,
+				9CBC62AF28749C7000395937 /* TableViewController.swift in Sources */,
 				9CBC629D28749BA200395937 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

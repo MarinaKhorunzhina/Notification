@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Notification: UITableViewController {
+class  TableViewController: UITableViewController {
     
     let notifications = Notifications()
     

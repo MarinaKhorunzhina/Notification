@@ -7,7 +7,7 @@
 
 import UIKit
 import UserNotifications
-import FirebaseCore
+//import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         notifications.requestAutorization()
         notifications.notificationCenter.delegate = notifications
-        FirebaseApp.configure()
-        notifications.messagingDeleget.delegate = notifications
+       // FirebaseApp.configure()
+       // notifications.messagingDeleget.delegate = notifications
         return true
     }
     func applicationDidBecomeActive(_ application: UIApplication) {

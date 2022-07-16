@@ -7,12 +7,10 @@
 
 import UIKit
 import UserNotifications
-//import Firebase
 
 class Notifications: NSObject, UNUserNotificationCenterDelegate {
     
     let notificationCenter = UNUserNotificationCenter.current()
-  //  let messagingDeleget = Messaging.messaging()
     
     func requestAutorization() {
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -38,14 +36,15 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     func scheduleNotification(notifaicationType: String) {
         
         let content = UNMutableNotificationContent()
-        let userAction = "User Action"
+        let userActions = "User Actions"
         
         content.title = notifaicationType
-        content.body = "This is example how to create " + notifaicationType
+        content.body = "Summer Time"
         content.sound = UNNotificationSound.default
         content.badge = 1
-        content.categoryIdentifier = userAction
+        content.categoryIdentifier = userActions
         
+        /*
         guard let path = Bundle.main.path(forResource: "icon", ofType: "png") else { return }
         
         let url = URL(fileURLWithPath: path)
@@ -60,6 +59,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         } catch {
             print("The attachment cold not be loaded")
         }
+ */
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
@@ -74,15 +74,25 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
             }
         }
         
-        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
-        let deleteAction = UNNotificationAction(identifier: "Delete", title: "Delete", options: [.destructive])
+        
+        let snoozeAction = UNNotificationAction(
+            identifier: "Snooze",
+            title: "Snooze",
+            options: [])
+        
+        let deleteAction = UNNotificationAction(
+            identifier: "Delete",
+            title: "Delete",
+            options: [.destructive])
+        
         let category = UNNotificationCategory(
-            identifier: userAction,
+            identifier: userActions,
             actions: [snoozeAction, deleteAction],
             intentIdentifiers: [],
             options: [])
-        
+
         notificationCenter.setNotificationCategories([category])
+ 
     }
     
     func userNotificationCenter(
@@ -120,10 +130,3 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     }
 
 }
-//extension Notifications: MessagingDelegate {
-//    
-//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-//        print("\nFirebase regisration token: \(String(describing: fcmToken))\n")
-//    }
-//}
-

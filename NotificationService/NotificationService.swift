@@ -30,14 +30,13 @@ class NotificationService: UNNotificationServiceExtension {
     }
     
     override func serviceExtensionTimeWillExpire() {
-        // Called just before the extension will be terminated by the system.
-        // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.
         if let contentHandler = contentHandler, let bestAttemptContent =  bestAttemptContent {
             contentHandler(bestAttemptContent)
         }
     }
 
 }
+
 //MARK: - Helper Functions
 extension NotificationService {
     
@@ -58,7 +57,7 @@ extension NotificationService {
             try? FileManager.default.moveItem(at: downloadUrl, to: urlPath)
             
             do {
-                let attachment = try UNNotificationAttachment(identifier: "favicon", url: urlPath, options: nil)
+                let attachment = try UNNotificationAttachment(identifier: "icon", url: urlPath, options: nil)
                 completionHandler(attachment)
             } catch {
                 completionHandler(nil)

@@ -5,9 +5,10 @@
 //  Created by Marina on 5.07.22.
 //
 
+
 import UIKit
 
-class  TableViewController: UITableViewController {
+class TableViewController: UITableViewController {
     
     let notifications = Notifications()
     
